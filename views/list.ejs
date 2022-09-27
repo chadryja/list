@@ -1,0 +1,22 @@
+<%-include("header")-%>
+    <div class="box" id="heading"><h1 class="date" > <%= kd %> </h1>
+    </div>
+        <div class="box">
+    
+        <% ad.forEach(function (item){ %> 
+        <form action="/delete" method="post">    
+        
+        <div class="item"> 
+            <input type="checkbox"name="delet" value="<%= item._id %>" onchange="this.form.submit()">
+ <p><%=item.name%></p>    </div>
+<input type="hidden" name="listname" value="<%=kd%>"></form>
+        <% }) %> 
+         
+        
+<form class="item" action="/" method="post">
+
+<input class="in" type="text" name="more" placeholder="Write More" autocomplete="off">
+<button class="innp" type="submit" name="liste" value="<%=kd%>">+</button>
+
+</form>      </div>
+ <%-include("foter")-%>
